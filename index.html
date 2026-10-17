@@ -107,6 +107,46 @@
       .floating-wa{right:12px;bottom:12px;padding:12px 13px}
     }
 
+
+    /* High-attention consultation CTA: moving gold sheen + restrained pulse */
+    .nav-cta{
+      position:relative;isolation:isolate;overflow:hidden;
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      background:linear-gradient(110deg,#c8b64b 0%,#f5e8a0 24%,#c8b64b 48%,#a18b22 100%);
+      background-size:220% 100%;color:#080808!important;
+      border:1px solid #f0df85;
+      box-shadow:0 0 0 1px rgba(200,182,75,.25),0 0 22px rgba(200,182,75,.22);
+      animation:dabCtaGlow 2.8s ease-in-out infinite,dabCtaShimmer 5s linear infinite;
+      transition:transform .25s ease,box-shadow .25s ease;
+    }
+    .nav-cta:before{
+      content:"";position:absolute;z-index:-1;top:-60%;left:-75%;width:45%;height:220%;
+      transform:rotate(22deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.82),transparent);
+      animation:dabCtaSweep 3.4s ease-in-out infinite;pointer-events:none;
+    }
+    .nav-cta:after{
+      content:"";position:absolute;inset:4px;border:1px solid rgba(8,8,8,.22);pointer-events:none;
+    }
+    .nav-cta:hover,.nav-cta:focus-visible{
+      transform:translateY(-3px) scale(1.025);
+      box-shadow:0 0 0 2px rgba(200,182,75,.22),0 0 34px rgba(200,182,75,.48);
+      animation-play-state:paused;
+    }
+    .nav-cta:focus-visible{outline:2px solid #fff;outline-offset:5px}
+    @keyframes dabCtaGlow{
+      0%,100%{box-shadow:0 0 0 1px rgba(200,182,75,.2),0 0 14px rgba(200,182,75,.15)}
+      50%{box-shadow:0 0 0 2px rgba(200,182,75,.34),0 0 29px rgba(200,182,75,.38)}
+    }
+    @keyframes dabCtaShimmer{0%{background-position:100% 0}100%{background-position:-120% 0}}
+    @keyframes dabCtaSweep{0%,18%{left:-75%;opacity:0}30%{opacity:1}58%,100%{left:145%;opacity:0}}
+    @media(prefers-reduced-motion:reduce){
+      .nav-cta,.nav-cta:before{animation:none!important;transition:none!important}
+    }
+    @media(max-width:620px){
+      .nav-cta{animation:dabCtaGlow 3.2s ease-in-out infinite}
+      .nav-cta:before{animation:dabCtaSweep 4.2s ease-in-out infinite}
+    }
+
   </style>
 </head>
 <body>
