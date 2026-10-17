@@ -142,7 +142,20 @@
     @media(prefers-reduced-motion:reduce){
       .nav-cta,.nav-cta:before{animation:none!important;transition:none!important}
     }
+    /* Crisp, high-contrast brand typography in the header */
+    .brand-name{
+      display:block;font-family:Manrope,Arial,sans-serif;font-size:1.55rem;
+      font-weight:800;letter-spacing:.16em;line-height:1.12;color:#fff;
+      -webkit-font-smoothing:antialiased;text-rendering:geometricPrecision;
+    }
+    .brand-sub{
+      font-family:Manrope,Arial,sans-serif;font-size:.62rem;font-weight:800;
+      letter-spacing:.18em;line-height:1.4;color:#d7c65a;margin-top:4px;
+      white-space:nowrap;-webkit-font-smoothing:antialiased;
+    }
     @media(max-width:620px){
+      .brand-name{font-size:1.15rem;letter-spacing:.13em}
+      .brand-sub{font-size:.48rem;letter-spacing:.12em;margin-top:3px}
       .nav-cta{animation:dabCtaGlow 3.2s ease-in-out infinite}
       .nav-cta:before{animation:dabCtaSweep 4.2s ease-in-out infinite}
     }
