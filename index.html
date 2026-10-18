@@ -244,6 +244,25 @@
       .nav-cta:before{animation:dabCtaSweep 4.2s ease-in-out infinite}
     }
 
+    /* Mobile hero image: preserve the car detail and improve visible clarity */
+    @media(max-width:620px){
+      .hero{min-height:690px}
+      .hero:before{
+        background-image:
+          linear-gradient(180deg,rgba(8,8,8,.76) 0%,rgba(8,8,8,.54) 42%,rgba(8,8,8,.18) 72%,rgba(8,8,8,.48) 100%),
+          url('images/images%20(1).jpeg');
+        background-position:center, 64% center;
+        background-size:cover, auto 100%;
+        background-repeat:no-repeat;
+        filter:none;
+      }
+      .hero-content{padding-top:70px;padding-bottom:115px}
+    }
+    @media(max-width:390px){
+      .hero:before{background-position:center, 61% center;background-size:cover, auto 100%}
+      .hero{min-height:670px}
+    }
+
   </style>
 </head>
 <body>
