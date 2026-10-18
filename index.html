@@ -331,6 +331,27 @@
       .contact-info .contact-row{opacity:1;transform:none;animation:none!important}
     }
 
+  
+    /* Final responsive and interaction polish: keep the existing DAB design */
+    @media(max-width:420px){
+      nav{gap:8px}
+      .brand{gap:8px;min-width:0}
+      .brand-mark{width:36px;height:36px}
+      .brand-name{font-size:1rem;letter-spacing:.1em}
+      .brand-sub{font-size:.43rem;letter-spacing:.08em}
+      .nav-links{gap:0;min-width:0}
+      .nav-cta{padding:10px 8px;font-size:.58rem;letter-spacing:0;white-space:nowrap}
+      .floating-wa{right:10px;bottom:10px;min-height:48px;padding:12px 13px;gap:8px;font-size:.66rem}
+      .floating-wa svg{width:17px;height:17px}
+    }
+    @media(max-width:350px){
+      .brand-mark{width:30px;height:30px}
+      .brand-name{font-size:.9rem}
+      .brand-sub{font-size:.39rem;letter-spacing:.05em}
+      .nav-cta{padding:9px 6px;font-size:.54rem}
+      .floating-wa span{font-size:.6rem}
+    }
+
   </style>
 </head>
 <body>
@@ -375,7 +396,7 @@
     </section>
   </main>
   <footer class="footer"><div class="container footer-main"><a class="brand" href="#home" aria-label="DAB Auto Concept home"><img class="brand-mark" src="dab-logo.png" alt="DAB Auto Concept logo"><span><span class="brand-name">DAB</span><span class="brand-sub" style="display:block">AUTO CONCEPT</span></span></a><p>© <span id="year"></span> DAB Auto Concept · Website concept for review</p><div class="footer-links"><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a></div></div></footer>
-  <a class="floating-wa" href="#contact" aria-label="Enquire on WhatsApp"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.02 3.2A12.66 12.66 0 0 0 5.15 22.35L3.4 28.8l6.6-1.73A12.72 12.72 0 1 0 16.02 3.2Zm0 22.99c-1.9 0-3.77-.51-5.4-1.48l-.39-.23-3.92 1.03 1.05-3.82-.25-.4a10.27 10.27 0 1 1 8.91 4.9Zm5.64-7.69c-.31-.16-1.84-.91-2.13-1.02-.29-.1-.5-.16-.71.16-.21.31-.81 1.02-.99 1.23-.18.21-.36.23-.67.08-.31-.16-1.31-.48-2.49-1.53-.92-.82-1.54-1.83-1.72-2.14-.18-.31-.02-.48.14-.64.14-.14.31-.36.47-.54.16-.18.21-.31.31-.52.1-.21.05-.39-.03-.54-.08-.16-.71-1.7-.97-2.33-.26-.61-.52-.53-.71-.54h-.6c-.21 0-.54.08-.83.39-.29.31-1.09 1.07-1.09 2.61s1.12 3.03 1.28 3.24c.16.21 2.2 3.36 5.33 4.71.74.32 1.32.51 1.77.65.74.24 1.42.21 1.95.13.59-.09 1.84-.75 2.1-1.48.26-.73.26-1.36.18-1.49-.08-.13-.29-.21-.6-.37Z"/></svg><span>BOOK A CONSULTATION ↗</span></a>
+  <a class="floating-wa" href="https://wa.me/923136666146?text=Assalam-o-Alaikum%20DAB%20Auto%20Concept!%20I%27d%20like%20to%20ask%20about%20your%20car%20care%20services." target="_blank" rel="noopener noreferrer" aria-label="Enquire on WhatsApp"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.02 3.2A12.66 12.66 0 0 0 5.15 22.35L3.4 28.8l6.6-1.73A12.72 12.72 0 1 0 16.02 3.2Zm0 22.99c-1.9 0-3.77-.51-5.4-1.48l-.39-.23-3.92 1.03 1.05-3.82-.25-.4a10.27 10.27 0 1 1 8.91 4.9Zm5.64-7.69c-.31-.16-1.84-.91-2.13-1.02-.29-.1-.5-.16-.71.16-.21.31-.81 1.02-.99 1.23-.18.21-.36.23-.67.08-.31-.16-1.31-.48-2.49-1.53-.92-.82-1.54-1.83-1.72-2.14-.18-.31-.02-.48.14-.64.14-.14.31-.36.47-.54.16-.18.21-.31.31-.52.1-.21.05-.39-.03-.54-.08-.16-.71-1.7-.97-2.33-.26-.61-.52-.53-.71-.54h-.6c-.21 0-.54.08-.83.39-.29.31-1.09 1.07-1.09 2.61s1.12 3.03 1.28 3.24c.16.21 2.2 3.36 5.33 4.71.74.32 1.32.51 1.77.65.74.24 1.42.21 1.95.13.59-.09 1.84-.75 2.1-1.48.26-.73.26-1.36.18-1.49-.08-.13-.29-.21-.6-.37Z"/></svg><span>BOOK A CONSULTATION ↗</span></a>
   <script>
     document.getElementById('year').textContent=new Date().getFullYear();
     const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});
