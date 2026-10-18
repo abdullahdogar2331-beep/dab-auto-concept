@@ -281,6 +281,56 @@
     .location-map iframe{display:block;width:100%;height:390px;border:0;filter:grayscale(.8) contrast(1.05)}
     .map-directions{white-space:nowrap;flex-shrink:0}
     @media(max-width:620px){.location-map{margin-top:30px;padding:8px}.location-map-head{align-items:flex-start;flex-direction:column;padding:12px 8px 16px}.location-map iframe{height:320px}.map-directions{width:100%}}
+  
+    /* Contact details: subtle staggered entrance and premium hover motion */
+    .contact-info{gap:16px}
+    .contact-row{
+      position:relative;isolation:isolate;overflow:hidden;
+      padding:17px 16px;background:linear-gradient(110deg,rgba(255,255,255,.035),rgba(255,255,255,0));
+      border:1px solid rgba(200,182,75,.13);
+      transition:transform .3s ease,border-color .3s ease,background .3s ease,box-shadow .3s ease;
+    }
+    .contact-row:before{
+      content:"";position:absolute;z-index:-1;left:0;top:0;bottom:0;width:3px;
+      background:var(--gold);transform:scaleY(0);transform-origin:bottom;
+      transition:transform .3s ease;
+    }
+    .contact-row:hover{transform:translateX(6px);border-color:rgba(200,182,75,.52);background:rgba(200,182,75,.055);box-shadow:0 8px 26px rgba(0,0,0,.18)}
+    .contact-row:hover:before{transform:scaleY(1)}
+    .contact-icon{
+      position:relative;overflow:hidden;
+      transition:transform .35s ease,background .35s ease,color .35s ease,border-color .35s ease;
+    }
+    .contact-icon:after{
+      content:"";position:absolute;inset:-45%;
+      background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.3) 50%,transparent 65%);
+      transform:translateX(-120%) rotate(15deg);
+      transition:transform .55s ease;pointer-events:none;
+    }
+    .contact-row:hover .contact-icon{transform:translateY(-3px) rotate(-4deg);background:var(--gold);color:#080808;border-color:var(--gold)}
+    .contact-row:hover .contact-icon:after{transform:translateX(120%) rotate(15deg)}
+    .contact-row strong{transition:color .25s ease}
+    .contact-row:hover strong{color:#e5d477}
+    .contact-row a{display:inline-block;transition:color .25s ease,transform .25s ease}
+    .contact-row a:hover{color:#e5d477;transform:translateX(3px)}
+    .contact-info .contact-row{opacity:0;transform:translateY(16px)}
+    .contact-info.reveal.visible .contact-row,
+    .reveal.visible .contact-info .contact-row{
+      animation:contactRowEnter .6s cubic-bezier(.2,.75,.25,1) forwards;
+    }
+    .contact-info .contact-row:nth-child(1){animation-delay:.08s}
+    .contact-info .contact-row:nth-child(2){animation-delay:.2s}
+    .contact-info .contact-row:nth-child(3){animation-delay:.32s}
+    @keyframes contactRowEnter{to{opacity:1;transform:translateY(0)}}
+    @media(max-width:620px){
+      .contact-row{padding:15px 12px;gap:12px}
+      .contact-row:hover{transform:translateY(-2px)}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .contact-row,.contact-icon,.contact-icon:after,.contact-row:before,.contact-row strong,.contact-row a{transition:none!important}
+      .contact-info .contact-row{opacity:1;transform:none;animation:none!important}
+    }
+
   </style>
 </head>
 <body>
